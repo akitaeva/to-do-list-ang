@@ -1,0 +1,51 @@
+<!-- 
+<h2>To Do List Comp Works!</h2>
+
+<app-to-do-comp> </app-to-do-comp> -->
+
+<h2> Add Task </h2>
+<div>
+	<div>
+	  <label for="task-title"> Task Name </label>
+	  <input type="text" [(ngModel)]="newTask.title">
+	</div>
+	<div>
+	  <label for="task-description"> Task Description </label>
+	  <input type="text" [(ngModel)]="newTask.description">
+	</div>
+
+	<button (click)="addOneTask()">Submit New Task</button>
+</div>
+
+<h2> Current Tasks </h2>
+<div>
+	<div *ngFor = "let entry of entries">
+		Title: {{task.title}}
+		<br>
+		Description: {{task.description}}
+		<br>
+		Status: {{task.completed}}
+		<br>
+		
+		<button (click)= "deleteOneTask(task._id)"> Delete Task</button>
+		<button (click) ="showDiv = !showDiv">test </button>
+			<div *ngIf="showDiv" >
+				<div>
+				  <label for="task-title"> New Task Name </label>
+				  <input type="text" [(ngModel)]="newTask.title">
+				</div>
+				<div>
+				  <label for="task-description"> New Task Description </label>
+				  <input type="text" [(ngModel)]="newTask.description">
+				</div>
+				<div>
+				  <label for="task-doneyet"> Done </label>
+				  <input type="text" [(ngModel)]="newTask.completed">
+				</div>
+
+			   <button (click)="editOneTask(task._id)">Edit Task</button>
+			</div>
+
+		<br><br>
+	</div>
+</div> 
